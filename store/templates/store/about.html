@@ -30,6 +30,7 @@
 <body>
     <div id="header">
         <div id="logo">
+            <img src="{% static 'img/logo.jpg' %}" width="100" />
             <h1 title="Go back to homepage"><span>Fashion HIHI</span><a href="{% url 'product_list' %}"></a></h1>
         </div>
         <div id="nav">
@@ -43,11 +44,11 @@
             <!--主選單-->
             <nav id="main-nav">
                 <ul>
-                    <li><a href="{% url 'about' %}" class="highlight_txt">About</a></li>
-                    <li><a href="{% url 'product_list' %}">Home</a></li>
-                    <li><a href="{% url 'product_list' %}">Products</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'about' %}" class="highlight_txt">關於我們</a></li>
+                    <li><a href="{% url 'product_list' %}">主頁</a></li>
+                    <li><a href="{% url 'product_list' %}">產品</a></li>
+                    <li><a href="#">新訊息</a></li>
+                    <li><a href="#">聯絡我們</a></li>
                 </ul>
             </nav>
         </div>
@@ -55,22 +56,21 @@
     <!--橫幅圖片-->
     <div class="hero-image" style="background-image: url('{% static 'img/Gym.png' %}')";>
         <div class="hero-text">
-            <h1 class="font-size-50 line-height_15">Fashion HIHI</h1>
-            <p class="margin_bottom-20">The ocean gave birth to countless lives.</p>
-            <button>Visit it!</button>
+            <h1 class="font-size-50 line-height_15" style="color: #fff;">健康人生</h1>
+            <p class="margin_bottom-20"style="font-size: 20px; " >強調健康生活，保護環境，運用科技，提升生活品質</p>
+            <button>參觀更多</button>
         </div>
     </div>
 
     <!--滿版文字區塊-->
-    <div class="full_layout bg_piggy">
+    <div class="full_layout " style="background-color: 	#D9FFFF;" >
         <div id="maintxt">
-            <h2 class="color_pink">About Us</h2>
-            <p>The ocean gave birth to countless lives.There are many creatures in the ocean that humans don't understand.</p>
-            <p>The ocean gave birth to countless lives.There are many creatures in the ocean that humans don't understand.</p>
+            <h2 class="color_pink">關於我們</h2>
+            <p>運動、健康、美學、科技，這些都是我們的追求。我們希望透過科技的力量，改變人類的生活方式，讓每個人都能享受健康的生活。</p>
         </div>
     </div>
     <!--LOGO區塊-->
-    <div id="mainpic">
+    <div id="mainpic" >
         <div class="item1"><img src="{% static 'img/logoGY.png' %}" alt="" class="pic_transform"></div>
         <div class="item2"><img src="{% static 'img/logoGY2.png' %}" alt="" class="pic_transform"></div>
         <div class="item3"><img src="{% static 'img/logoGY3.png' %}" alt="" class="pic_transform"></div>
@@ -78,21 +78,21 @@
         <div class="item5"><img src="{% static 'img/logoGfY.png' %}" alt="" class="pic_transform"></div>
     </div>
     <!--表單+地圖區塊-->
-    <div class="full_layout bg_piggy padding_v3">
+    <div class="full_layout bg_piggy padding_v3" style="background-color: #D9FFFF;">
         <div id="main-content">
             <h2 class="color_pink">Contact Us</h2>
             <div id="contact_form">
                 <form method="post" action="">
-                    <input type="text" name="username" id="username" placeholder="Your name">
-                    <input type="text" name="usermail" id="email" placeholder="Your Email">
-                    <input type="text" name="userphone" id="phone" placeholder="Your Phone">
-                    <textarea name="useropinion" id="useropinion" placeholder="Leave Your Message Here"></textarea>
-                    <input type="submit" value="submit" class="button_pink-gradient cursor_pointer" 
+                    <input type="text" name="username" id="username" placeholder="Your name" style="background-color: #ECFFFF;">
+                    <input type="text" name="usermail" id="email" placeholder="Your Email" style="background-color: #ECFFFF;">
+                    <input type="text" name="userphone" id="phone" placeholder="Your Phone" style="background-color: #ECFFFF;">
+                    <textarea name="useropinion" id="useropinion" placeholder="Leave Your Message Here" style="background-color: #ECFFFF;"></textarea>
+                    <input type="submit" value="submit" class="button_pink-gradient cursor_pointer" style="background-color: #ECFFFF" 
                         onclick="alert('Thank You!\n We will respond ASAP!')">
                 </form>
             </div>
             <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.3508448291436!2d120.76097817515611!3d21.959493829933095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3471b1abaefd19b9%3A0x77b6609498f2b08f!2z5Y2X54Gj6YGK5oap5Y2A!5e0!3m2!1szh-TW!2stw!4v1689080994719!5m2!1szh-TW!2stw" width="98%" height="445" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28964.58504124025!2d120.91075803455564!3d24.844267693402738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346835b691d1979f%3A0x4a4ffbb9c3a27ce5!2z5Y2X5a-u6YGL5YuV5YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1717695844560!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
@@ -114,7 +114,7 @@
         <!--GOTOP區塊-->
         <div id="gotop">
             <a href="#"><span class="material-icons">arrow_circle_up</span>
-                <span class="gotip">Go Back To Top</span>
+                <span class="gotip">回到上方</span>
             </a>
         </div>
     </div>

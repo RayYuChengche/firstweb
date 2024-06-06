@@ -21,7 +21,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product, Cart, CartItem, Order, OrderItem
 
-@login_required
+@login_required(login_url='/admin/')
 def add_to_cart(request, product_id):
     product = Product.objects.get(id=product_id)
     cart, created = Cart.objects.get_or_create(user=request.user)
@@ -30,13 +30,13 @@ def add_to_cart(request, product_id):
     cart_item.save()        
     return redirect('product_list')
 
-@login_required
+@login_required(login_url='/admin/')
 def view_cart(request):
     cart=Cart.objects.get(user=request.user)
     total_price = sum([item.product.price * item.quantity for item in cart.cartitem_set.all()])
     return render(request,'store/view_cart.html', {'cart': cart, 'total_price': total_price})
 
-@login_required
+@login_required(login_url='/admin/')
 def checkout(request):
     cart = Cart.objects.get(user=request.user)
     total_price = sum(item.product.price * item.quantity for item in cart.cartitem_set.all())
@@ -50,5 +50,6 @@ def checkout(request):
 
     return render(request, 'store/checkout.html', {'cart': cart, 'total_price': total_price})
 
+@login_required(login_url='/admin/')
 def order_success(request):
     return render(request, 'store/order_success.html')

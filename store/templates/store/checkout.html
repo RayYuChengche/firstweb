@@ -100,7 +100,7 @@
                 <h2>Total: ${{ total_price }}</h2>
                 <form method="POST" action="{% url 'checkout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">confirm Checkout</button>
+                    <button type="submit" class="btn btn-primary">確認購買</button>
             </div>
         </div>
     </div>
@@ -136,7 +136,7 @@
    <!--GOTOP區塊-->
    <div id="gotop">
        <a href="#"><span class="material-icons">arrow_circle_up</span>
-           <span class="gotip">Go Back To Top</span>
+           <span class="gotip">回到上方</span>
        </a>
    </div>
 </div>
