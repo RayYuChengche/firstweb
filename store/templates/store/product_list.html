@@ -85,6 +85,17 @@
         margin-top: 50px;
       }
     </style>
+    .div img{
+    position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; /* 將圖片固定在父層的大小 */
+  width: 50%;
+  height: 50%; /* 高和寬都填滿容器 */
+  object-fit: cover; /* 和background-image設定background-size: cover一樣，圖片剛好填滿 */
+  object-position: center;
+}
   </head>
   <body>
     {% include 'header1.html' %} {% load static %}
