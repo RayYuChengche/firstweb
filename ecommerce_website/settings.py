@@ -26,22 +26,26 @@ SECRET_KEY = "django-insecure-^mm*ek$@%tb4^-c)ew#s027oojir241k2%1-*h(4#itup9-(wm
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+AUTH_USER_MODEL = 'store.CustomUser'
 
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "store.apps.StoreConfig",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'store',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 #pip install whitenoise
 
 MIDDLEWARE = [
+    'allauth.account.middleware.AccountMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",  #這裡輸入之後本機不能看
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -126,3 +130,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'l9856978@gmail.com'
+EMAIL_HOST_PASSWORD = 'vrwx xleb silg aefc'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
