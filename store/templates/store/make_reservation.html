@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="html, css, 網頁, JS, javascript">
+    <meta name="description" content="Here is my page.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joy">
+
+    <!-- bootstrap js 字型-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/68f8681dba.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- css -->
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    {% block script %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--網站小圖示-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <!--歸零CSS-->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <!--變數設定CSS-->
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+    <!--版面設定CSS-->
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+   {% endblock %}
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入自定義 CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <title>{% block title %}預約訂位{% endblock %}</title>
+    
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- 自定义 CSS -->
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--引入header1.html-->
+
+    {% include 'header1.html' %}
+
+    <!--頁面內容-->
+    <div class="container">
+        <div class="row">
+            <div class="card-md-3" style="max-width: 1400px;">
+                <div class="row g-0">
+                        <div class="col-md-6">
+                        <!--圖片-->
+                        <img src="{% static 'img/Gym.png' %}" class="img-fluid" alt="Restaurant Image"> 
+                        </div>
+                        <!--表單-->
+                           <div class="col-md-6">
+                            <div class="card-body">
+                                <h1 class="mb-4">預約訂位</h1>
+                                <form method="POST">
+                                  {% csrf_token %}
+                                  <div class="form-group">
+                                    <label for="time_slot">選擇時段</label> 
+                                       {{ form.time_slot }}
+                                  </div>
+                                     <div class="form-group">
+                                        <label for="number_of_people">人數</label>
+                                        {{ form.number_of_people }}
+                                     </div>
+                                     <button type="submit" class="btn btn-primary">提交</button>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--菜單-->
+    <div class="container">
+        <div class="row">
+            <div class="card-group">
+                <div class="card">
+                  <img src="{% static 'img/fit1.png' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">重量訓練</h5>
+                    <p class="card-text">健身能強化肌肉和骨骼，提高心肺功能，增強代謝，並幫助減壓和提升自信。通過健身，你將擁有更健康的體態和更積極的生活態度。</p>
+                    <p class="card-text"><small class="text-body-secondary">Weight Training</small></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="{% static 'img/fit2.png' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">有氧運動</h5>
+                    <p class="card-text">有氧運動，如跑步和游泳，有助於提升心肺健康，促進血液循環，減少體脂，並提升整體耐力。同時，還能釋放壓力，讓你感覺更快樂和輕鬆。</p>
+                    <p class="card-text"><small class="text-body-secondary">Aerobic Exercise</small></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="{% static 'img/fit3.png' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">瑜伽</h5>
+                    <p class="card-text">瑜伽能提升柔韌性和平衡感，強化核心肌肉，改善姿勢，並減少壓力。透過冥想和深呼吸，瑜伽還能帶來內心的平靜和專注力。</p>
+                    <p class="card-text"><small class="text-body-secondary">Yoga</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
+    <!-- 引入 Bootstrap JS 和 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<!--頁尾區塊-->
+<div id="footer">
+    <div id="copyright">
+        <small>Copyrught 2020Fashion HIHI </small>
+        <a href="tel:+8801886-666581">tel:+8860912345678</a>
+    </div>
+    <div id="sns">
+        <a href="https://www.facebook.com/fashionvillage/" targe="_blank"><img src="{% static 'img/ion-fb.png' %}" alt=""></a>
+        <a href="https://www.instergram.com/fashionvillage/" targe="_blank"><img src="{% static 'img/ion-ig.png' %}" alt=""></a>
+        <a href="https://www.linkedin.com/fashionvillage/" targe="_blank"><img src="{% static 'img/ion-linkedin.png' %}" alt=""></a>
+        <a href="https://www.skype.com/fashionvillage/" targe="_blank"><img src="{% static 'img/ion-skype.png' %}" alt=""></a>
+        <a href="https://www.twitter.com/fashionvillage/" targe="_blank"><img src="{% static 'img/ion-twitter.png' %}" alt=""></a>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>

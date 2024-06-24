@@ -83,19 +83,16 @@
     <style>
       .container {
         margin-top: 50px;
-      
+      }
+      .carousel-item img {
+    max-height: 30%; /* 设置图片的最大高度，你可以根据需要调整 */
+    object-fit: cover; /* 圖片比例 */
+    width: auto;
+    margin: 0 auto; /* 居中图片 */
+
+}
+
     </style>
-    .div img{
-    position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0; 
-  width: 50%;
-  height: 50%; 
-  object-fit: cover; /* 和background-image設定background-size: cover一樣，圖片剛好填滿 */
-  object-position: center;
-}}
   </head>
   <body>
     {% include 'header1.html' %} {% load static %}
@@ -164,13 +161,14 @@
               <p class="card-text">Price: ${{ product.price }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
-                  <!-- 添加到購物車按鈕 -->
                   <a
-                    href="{% url 'add_to_cart' product.id %}"
-                    class="btn btn-sm btn-outline-secondary"
-                    >Add to cart</a
-                  >
+                  href="{% url 'add_to_cart' product.id %}"
+                  class="btn btn-sm btn-outline-secondary"
+                  >加到購物車</a
+                >
+                  <a href="{% url 'view_cart' %}"   class="btn btn-sm btn-outline-secondary">結帳</a>
+                  <!-- 添加到購物車按鈕 -->
+                 
                 </div>
               </div>
             </div>

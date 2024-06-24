@@ -1,7 +1,24 @@
+<style>
+  .navbar-nav .nav-item {
+  white-space: nowrap; /* 避免文字换行 */
+}
+
+.navbar-nav .nav-item  {
+  margin-left: 30px; /* 调整导航项之间的间隔 */
+}
+
+.nav-link {
+  font-size: 30px;
+}
+
+.navbar-brand img {
+  max-height: 100px; /* 调整Logo图片的高度 */
+}
+</style>
 <header>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'about' %}">
         {% load static %}
         <img src="{% static 'img/logo.jpg' %}" width="100" />
       </a>
@@ -22,32 +39,45 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              href="{% url 'product_list' %}"
-              style="font-size: 30px"
+              href="{% url 'about' %}"
+              style="font-size: 25px"
               >主頁</a
             >
-          </li>
+          </li> 
+          <li class="nav-item"></li>
+          <a
+          class="nav-link"
+          href="{% url 'product_list' %}"
+          style="font-size: 25px"
+          >商品</a
+        >
+      </li>
+    
+  <li class="nav-item"></li>
+  <a
+  class="nav-link"
+  href="{% url 'make_reservation' %}"
+  style="font-size: 25px"
+  >課程</a
+>
+</li>
           <li class="nav-item">
             <a
               class="nav-link"
               href="{% url 'view_cart' %}"
-              style="font-size: 30px"
-              >顯示購物車</a
+              style="font-size: 25px"
+              >購物車</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
               href="{% url 'checkout' %}"
-              style="font-size: 30px"
-              >確認結帳</a
+              style="font-size: 25px"
+              >結帳</a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}" style="font-size: 30px"
-              >關於我們</a
-            >
-          </li>
+
         </ul>
       </div>
     </nav>

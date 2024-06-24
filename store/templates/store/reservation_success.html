@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>預約結果</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        {% if email_sent %}
+        <div class="alert alert-success">
+            <h4 class="alert-heading">預約成功！</h4>
+            <p>您的預約已成功，我們已經將確認郵件發送到您的郵箱。</p>
+            <hr>
+            <p class="mb-0">感謝您的預約！</p>
+        </div>
+        {% else %}
+        <div class="alert alert-warning">
+            <h4 class="alert-heading">預約成功，但郵件發送失敗！</h4>
+            <p>您的預約已成功，但由於某些原因郵件發送失敗，請聯繫我們。</p>
+            <hr>
+            <p class="mb-0">感謝您的預約！</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

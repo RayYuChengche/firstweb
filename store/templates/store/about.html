@@ -7,7 +7,7 @@
     <meta name="description" content="Free Web tutorials">
     <meta name="keywords" content="HTML,CSS,JavaScript">
     <meta name="author" content="Jin,showswin459@mail.com">
-    <title>Welcome Show About</title>
+    <title>Kitty Fit Life</title>
 
     <!--網路字型-->
     <link href="https: //fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800 & display= swap " rel="stylesheet" 家庭= Nanum+Gothic:wght@400;700;800 &>
@@ -26,29 +26,24 @@
     <link rel="stylesheet" href="{% static 'css/basic.css' %}">
     <!--版面設定CSS-->
     <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    
 </head>
 <body>
+    
     <div id="header">
         <div id="logo">
             <img src="{% static 'img/logo.jpg' %}" width="100" />
-            <h1 title="Go back to homepage"><span>Fashion HIHI</span><a href="{% url 'product_list' %}"></a></h1>
+            <h1 title="Go back to homepage"><span>Fashion HIHI</span><a href="{% url 'about' %}"></a></h1>
         </div>
         <div id="nav">
-            <!--上層固定選單-->
-            <nav id="top-nav">
-                <ul>
-                    <li><a href="#0"><span class="material-icons">app_shortcut</span><span class="topnav-text">Go To App</span></a></li>
-                    <li><a href="#0"><span class="material-icons">storefront</span><span class="topnav-text">Online Shop</span></a></li>
-                </ul>
-            </nav>
+          
             <!--主選單-->
             <nav id="main-nav">
                 <ul>
-                    <li><a href="{% url 'about' %}" class="highlight_txt">關於我們</a></li>
-                    <li><a href="{% url 'product_list' %}">主頁</a></li>
+                    <li><a href="{% url 'about' %}">主頁</a></li>
                     <li><a href="{% url 'product_list' %}">產品</a></li>
-                    <li><a href="#">新訊息</a></li>
-                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="{% url 'register' %}">註冊</a></li>
+                    <li><a href="{% url 'login' %}">登入</a></li>
                 </ul>
             </nav>
         </div>
@@ -56,7 +51,7 @@
     <!--橫幅圖片-->
     <div class="hero-image" style="background-image: url('{% static 'img/Gym.png' %}')";>
         <div class="hero-text">
-            <h1 class="font-size-50 line-height_15" style="color: #fff;">健康人生</h1>
+            <h1 class="font-size-50 line-height_15" style="color: #fff;">Kitty Fit Life</h1>
             <p class="margin_bottom-20"style="font-size: 20px; " >強調健康生活，保護環境，運用科技，提升生活品質</p>
             <button>參觀更多</button>
         </div>
