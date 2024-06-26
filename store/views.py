@@ -84,7 +84,7 @@ def login_view(request):
                 elif user.軍人:
                     return redirect('teacher_home')
                 else:
-                    return redirect('success1')
+                    return redirect('success2')
             else:
                 return render(request, 'login.html', {'form': form, 'error': 'Account not approved yet.'})
     else:
@@ -102,6 +102,10 @@ def teacher_home(request):
 @login_required
 def success1(request):  
     return render(request, 'success1.html')
+
+@login_required
+def success2(request):  
+    return render(request, 'success2.html')
 
 
 logger = logging.getLogger(__name__)
