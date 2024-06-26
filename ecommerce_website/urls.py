@@ -39,6 +39,7 @@ urlpatterns = [
     path('reservation_success/<int:email_sent>/', reservation_success, name='reservation_success'),
     path("make_reservation/", make_reservation, name="make_reservation"),
     path("success1/", views.success1, name="success1"),
+    path("success2/", views.success2, name="success2"),
 
 ]
 
