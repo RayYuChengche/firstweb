@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+    {% include 'header1.html' %}
     <div class="container register-container">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -30,7 +31,9 @@
                             {% csrf_token %}
                             {{ form.as_ul }}
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                <button type="submit" class="btn btn-primary custom-blue-bg">註冊</button>
+                                <button type="reset" class="btn btn-primary custom-blue-bg">重設</button>
+                                <a href="{% url 'login' %}" class="btn btn-primary custom-blue-bg">登入</a>
                             </div>
                         </form>
                     </div>

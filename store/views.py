@@ -120,6 +120,8 @@ def make_reservation(request):
             reservation_date = reservation.time_slot.date
             reservation_time = reservation.time_slot.start_time
             reservation_num= reservation.number_of_people
+            # 管理員的電子郵件地址
+            admin_email = 'l9856978@gmail.com'
 
             # 发送电子邮件
             email_subject = '預約成功'
@@ -130,7 +132,7 @@ def make_reservation(request):
                     email_subject,
                     email_message,
                     settings.DEFAULT_FROM_EMAIL,
-                    [user_email],
+                    [user_email,admin_email],
                     fail_silently=False,
                 )
                 logger.info(f'Email sent successfully to {user_email}')

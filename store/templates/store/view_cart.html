@@ -88,7 +88,7 @@
   <body>
     {% include 'header1.html' %}
     <div class="container">
-        <h1 class="text-center">Your Cart</h1>
+        <h1 class="text-center">購物車</h1>
         <ul class="list-group">
             {% for item in cart.cartitem_set.all %}
             <li class="list-group-item">
@@ -96,7 +96,7 @@
             </li>
             {% endfor %}
             <h2>總價: ${{ total_price }}</h2>
-            <a class='btn btn-lg btn-primary' href="{% url 'checkout' %}" role ="button" target='_blank'>確認結帳 &#187;</a>
+            <a class='btn btn-lg btn-primary' href="{% url 'checkout' %}" role ="button" target='_blank' style="color:white;">結帳</a>
     </div>
 
 
@@ -116,8 +116,8 @@
      <!--頁尾區塊-->
      <div id="footer">
       <div id="copyright">
-          <small>Copyrught 2020Fashion HIHI </small>
-          <a href="tel:+8801886-666581">tel:+8860912345678</a>
+          <small>請確認您的商品及價格 </small>
+          <a href="tel:+8801886-666581">tel:+0987654321</a>
       </div>
       <div id="sns">
           <a href="https://www.facebook.com/fashionvillage/" targe="_blank"><img src="{% static 'img/ion-fb.png' %}" alt=""></a>
